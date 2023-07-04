@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,71 +32,81 @@ public class PlayerMovement : MonoBehaviour
     private bool wallJumping;
     public bool canMove;
 
+    PhotonView view;
+
     void Start()
     {
         canMove = true;
         extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
+        view = GetComponent<PhotonView>();
     }
 
     void FixedUpdate()
     {
-        //Ground Check + Wall Check
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsTile);
-        isWalled = Physics2D.OverlapCircle(wallCheck.position, checkRadius, whatIsTile);
+        if (view.IsMine) { 
+            //Ground Check + Wall Check
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsTile);
+            isWalled = Physics2D.OverlapCircle(wallCheck.position, checkRadius, whatIsTile);
         
-        //Horizontal Movement
-        move = Input.GetAxis("Horizontal");
-        //Debug.Log(move);
-        if (canMove)
-        {
-            if (isGrounded)
+            //Horizontal Movement
+            move = Input.GetAxis("Horizontal");
+            //Debug.Log(move);
+            if (canMove)
             {
-                rb.velocity = new Vector2(speed * move, rb.velocity.y);
-                animator.SetBool("isGrounded", true);
-                animator.SetFloat("Speed", Mathf.Abs(move));
-            }
-            else
-            {
-                rb.velocity = new Vector2(speed * move, rb.velocity.y);
-                animator.SetBool("isGrounded", false);
-            }
+                if (isGrounded)
+                {
+                    rb.velocity = new Vector2(speed * move, rb.velocity.y);
+                    animator.SetBool("isGrounded", true);
+                    animator.SetFloat("Speed", Mathf.Abs(move));
+                }
+                else
+                {
+                    rb.velocity = new Vector2(speed * move, rb.velocity.y);
+                    animator.SetBool("isGrounded", false);
+                }
 
-            //Flip character
-            if (move > 0 && !facingRight)
-            {
-                Flip();
-            }
+                //Flip character
+                if (move > 0 && !facingRight)
+                {
+                    Flip();
+                }
 
-            if (move < 0 && facingRight)
-            {
-                Flip();
-            }
+                if (move < 0 && facingRight)
+                {
+                    Flip();
+                }
 
-            WallSlide();
+                WallSlide();
+            }
         }
     }
 
     void Update() 
     {
-        //Reset extra jump
-        if(isGrounded == true)
+        if (view.IsMine)
         {
-            extraJumps = extraJumpsValue;
-        }
+            //Reset extra jump
+            if (isGrounded == true)
+            {
+                extraJumps = extraJumpsValue;
+            }
 
-        //Jump + Wall jump control
-        if(Input.GetButtonDown("Jump") && extraJumps > 0)
-        {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            extraJumps--;
-        } else if(Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded)
-        {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-        } else if(Input.GetButtonDown("Jump") && wallJumping && facingRight != true)
-        {
-            rb.velocity = new Vector2(-move * wallJumpingPower.x, wallJumpingPower.y);
+            //Jump + Wall jump control
+            if (Input.GetButtonDown("Jump") && extraJumps > 0)
+            {
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+                extraJumps--;
+            }
+            else if (Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded)
+            {
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+            }
+            else if (Input.GetButtonDown("Jump") && wallJumping && facingRight != true)
+            {
+                rb.velocity = new Vector2(-move * wallJumpingPower.x, wallJumpingPower.y);
+            }
         }
     }
     

@@ -12,14 +12,43 @@ public class PlayerStat : MonoBehaviour
     public PlayerMovement movement;
     public Text goText;
     private Collider2D playerCollider;
+    private GameObject currentTeleporter;
+
     void Start()
     {
         hp = maxhp;
         healthBar.SetMaxHealth(maxhp);
         healthBar.SetHealth(hp);
 
-        GameObject player = GameObject.Find("Player");
+        GameObject player = this.gameObject;
         playerCollider = player.GetComponent<Collider2D>();
+    }
+
+    void Update()
+    {
+        if (currentTeleporter != null)
+        {
+            transform.position = currentTeleporter.GetComponent<S1Portal>().GetDestination().position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+        {
+            currentTeleporter = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+        {
+            if (collision.gameObject == currentTeleporter)
+            {
+                currentTeleporter = null;
+            }
+        }
     }
 
     public void TakeDamage(float amount)
