@@ -6,7 +6,7 @@ using Photon.Pun;
 public class EnemyBehaviour : MonoBehaviour
 {
     public float hitpoint;
-    public float maxHit = 5;
+    public float maxHit = 5f;
     private GameObject[] players;
     private GameObject playerOnLoad;
     private Transform playLoc;
@@ -26,7 +26,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Update()
     {
-        hitpoint = maxHit;
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
 
         // get the position of the target (AKA player)

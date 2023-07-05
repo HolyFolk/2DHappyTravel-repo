@@ -33,7 +33,6 @@ public class WTSHealth : MonoBehaviour
 
     private void Update()
     {
-        hitpoint = maxHit;
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
 
         // get the position of the target (AKA player)
