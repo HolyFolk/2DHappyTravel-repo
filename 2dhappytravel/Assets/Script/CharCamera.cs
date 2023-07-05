@@ -66,7 +66,7 @@ public class CharCamera : MonoBehaviour
         camera.backgroundColor = Color.black;
         camera.depth = player.GetComponent<SpriteRenderer>().sortingOrder - 1;
         camera.orthographic = true;
-        camera.orthographicSize = 5;
+        camera.orthographicSize = 8;
 
         CharCameraFollow followScript = cameraObj.AddComponent<CharCameraFollow>();
         followScript.target = player.transform;
