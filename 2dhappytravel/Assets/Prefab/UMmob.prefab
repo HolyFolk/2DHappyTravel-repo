@@ -206,6 +206,9 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 64
+  moveSpeed: 5
+  detectionRange: 10
+  target: {fileID: 13049314817683451, guid: 1193f9c87d3bf3f469900e6bacbb9fd1, type: 3}
 --- !u!95 &888771836503530142
 Animator:
   serializedVersion: 5
@@ -245,6 +248,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 8941569471820005006}
   - {fileID: 3572105502475730729}
   - {fileID: 6219168979826962512}
   sceneViewId: 0
