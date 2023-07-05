@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviourPunCallbacks
 {
     public Transform aimPoint;
     public GameObject projectilePrefab;
@@ -15,15 +16,31 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (photonView.IsMine && Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("Ranged");
-            Invoke("Shoot", 0.3f);
+            photonView.RPC("ShootRPC", RpcTarget.All);
+            // Invoke("Shoot", 0.3f);
+            Invoke("ShootDelay", 0.3f);
         }
     }
 
-    void Shoot()
+    // void Shoot()
+    // {
+    //    Instantiate(projectilePrefab, aimPoint.position, aimPoint.rotation);
+    // }
+
+    void ShootDelay()
     {
-        Instantiate(projectilePrefab, aimPoint.position, aimPoint.rotation);
+        ShootRPC();
+    }
+
+    [PunRPC]
+    void ShootRPC()
+    {
+        if (photonView.IsMine)
+        {
+            Instantiate(projectilePrefab, aimPoint.position, aimPoint.rotation);       
+        }
     }
 }
