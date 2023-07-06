@@ -2128,6 +2128,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 352897357775408593, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
       propertyPath: mob
       value: 
@@ -2197,6 +2205,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 352897357775408593, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
       propertyPath: mob
       value: 
@@ -2447,6 +2463,14 @@ PrefabInstance:
       propertyPath: m_UseAutoMass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6323716154206347483, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323716154206347483, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9086669265058110567, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2695,6 +2719,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2007261894763697023, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 352897357775408593, guid: 1fe4476f61a96724cb273c5c9e66438e, type: 3}
       propertyPath: mob
       value: 
@@ -2986,6 +3018,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 747535998596485306, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323716154206347483, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323716154206347483, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: ObservedComponents.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9086669265058110567, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
