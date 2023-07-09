@@ -73,6 +73,12 @@ public class NeoPlayermovement : MonoBehaviour
         AnimHandler = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        SetGravityScale(Data.gravityScale);
+        IsFacingRight = true;
+    }
+
     #region INPUT CALLBACKS
     //Methods which handle input detected in Update()
 
@@ -156,10 +162,117 @@ public class NeoPlayermovement : MonoBehaviour
         RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
 
     }
+    
+    private void Turn()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+
+        IsFacingRight = !IsFacingRight;
+
+    }
     #endregion
 
+    #region JUMP METHODS
+    private void Jump()
+    {
+        LastPressedJumpTime = 0;
+        LastOnGroundTime = 0;
 
+        #region Perform Jump
 
+        float force = Data.jumpForce;
+        if (RB.velocity.y < 0)
+            force -= RB.velocity.y;
+
+        RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        #endregion
+    }
+
+    private void WallJump(int dir)
+    {
+        LastPressedJumpTime = 0;
+        LastOnGroundTime = 0;
+        LastOnWallRightTime = 0;
+        LastOnWallLeftTime = 0;
+
+        #region Perform Wall Jump
+        Vector2 force = new Vector2(Data.wallJumpForce.x, Data.wallJumpForce.y);
+        force.x *= dir;
+
+        if (Mathf.Sign(RB.velocity.x) != Mathf.Sign(force.x))
+            force.x -= RB.velocity.x;
+        if (RB.velocity.y < 0)
+            force.y -= RB.velocity.y;
+
+        RB.AddForce(force, ForceMode2D.Impulse);
+        #endregion
+    }
+    #endregion
+
+    #region DASH METHODS
+    //Dash Coroutine
+    private IEnumerator StartDash(Vector2 dir)
+    {
+        LastOnGroundTime = 0;
+        LastPressedDashTime = 0;
+
+        float startTime = Time.time;
+
+        _dashesLeft--;
+        _isDashAttacking = true;
+
+        SetGravityScale(0);
+
+        while(Time.time - startTime <= Data.dashAttackTime)
+        {
+            RB.velocity = dir.normalized * Data.dashSpeed;
+
+            yield return null;
+        }
+
+        startTime = Time.time;
+
+        _isDashAttacking = false;
+
+        SetGravityScale(Data.gravityScale);
+        RB.velocity = Data.dashEndSpeed * dir.normalized;
+
+        while(Time.time - startTime <= Data.dashEndTime)
+        {
+            yield return null;
+        }
+
+        IsDashing = false;
+    }
+
+    private IEnumerator RefillDash(int amount)
+    {
+        _dashRefilling = true;
+        yield return new WaitForSeconds(Data.dashRefillTime);
+        _dashRefilling = false;
+        _dashesLeft = Mathf.Min(Data.dashAmount, _dashesLeft + 1);
+    }
+    #endregion
+
+    #region OTHER MOVEMENT METHODS
+    private void Slide()
+    {
+        if (RB.velocity.y > 0)
+        {
+            RB.AddForce(-RB.velocity.y * Vector2.up, ForceMode2D.Impulse);
+        }
+
+        float speedDif = Data.slideSpeed - RB.velocity.y;
+        float movement = speedDif * Data.slideAccel;
+
+        movement = Mathf.Clamp(movement, -Mathf.Abs(speedDif) *(1/ Time.fixedDeltaTime), Mathf.Abs(speedDif) *(1/ Time.fixedDeltaTime));
+
+        RB.AddForce(movement * Vector2.up);
+
+    }
+    #endregion
 
     #region CHECK METHODS
     public void CheckDirectionToFace(bool isMovingRight)
