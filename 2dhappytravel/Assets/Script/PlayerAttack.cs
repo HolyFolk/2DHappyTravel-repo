@@ -18,7 +18,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if(attackCD <= 0)
+    #region Attack Key
+        if (attackCD <= 0)
         {
             if(Input.GetKey(KeyCode.J))
             {
@@ -38,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    #endregion
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
