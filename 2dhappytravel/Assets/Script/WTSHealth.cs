@@ -9,7 +9,6 @@ public class WTSHealth : MonoBehaviour
     public float hitpoint;
     public float maxHit = 60;
     private Transform player;
-    private Transform playLoc;
 
     public bool isFlipped = false;
     public float attackDamage = 2.5f;
@@ -23,37 +22,22 @@ public class WTSHealth : MonoBehaviour
         hitpoint = maxHit;
         SetMaxHealth(maxHit);
         SetHealth(maxHit);
-        GameObject[] playLocs = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject playLoc in playLocs)
-        {
-            player = playLoc.GetComponent<Transform>();
-        }
+        GameObject playLoc = GameObject.Find("Player");
+        player = playLoc.GetComponent<Transform>();
 
-    }
-
-    private void Update()
-    {
-        hitpoint = maxHit;
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-
-        // get the position of the target (AKA player)
-        foreach (GameObject target in targets)
-        {
-            playLoc = target.GetComponent<Transform>();
-        }
     }
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
-        if (transform.position.x > playLoc.transform.position.x && isFlipped)
+        if (transform.position.x > player.position.x && isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
-        else if (transform.position.x < playLoc.position.x && !isFlipped)
+        else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);

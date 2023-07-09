@@ -5,8 +5,7 @@ using UnityEngine;
 public class S1Portal : MonoBehaviour
 {
 
-    /*
-    GameObject player;
+    public GameObject player;
 
     void Teleport(float x, float y, float z)
     {
@@ -19,14 +18,6 @@ public class S1Portal : MonoBehaviour
         {
             Teleport(-6.31f, 35.24f, 1f);
         }
-    }
-    */
-
-    [SerializeField] private Transform destination;
-
-    public Transform GetDestination()
-    {
-        return destination;
     }
 }
 

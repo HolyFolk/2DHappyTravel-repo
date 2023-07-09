@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     public float hitpoint;
     public float maxHit = 5;
-    private GameObject[] players;
-    private GameObject playerOnLoad;
-    private Transform playLoc;
+    private Transform player;
 
     public bool isFlipped = false;
     public float attackDamage = 2.5f;
@@ -20,33 +17,21 @@ public class EnemyBehaviour : MonoBehaviour
     private void Start()
     {
         hitpoint = maxHit;
-        // GameObject playerOnLoad = GameObject.FindGameObjectWithTag("Player");
-        // playLoc = playerOnLoad.GetComponent<Transform>();
+        GameObject playLoc = GameObject.Find("Player");
+        player = playLoc.GetComponent<Transform>();
+
     }
-
-    private void Update()
-    {
-        hitpoint = maxHit;
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-
-        // get the position of the target (AKA player)
-        foreach (GameObject target in targets)
-        {
-            playLoc = target.GetComponent<Transform>();
-        }
-    }
-
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
-        if(transform.position.x > playLoc.transform.position.x && isFlipped) 
+        if(transform.position.x > player.position.x && isFlipped) 
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
-        } else if(transform.position.x < playLoc.transform.position.x && !isFlipped) 
+        } else if(transform.position.x < player.position.x && !isFlipped) 
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);

@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.Find("Player");
         animator = player.GetComponent<Animator>();
     }
     void Update()
