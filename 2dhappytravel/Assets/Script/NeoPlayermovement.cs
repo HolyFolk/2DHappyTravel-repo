@@ -145,8 +145,16 @@ public class NeoPlayermovement : MonoBehaviour
         #region Conserve Momentum
         if (Data.doConserveMomentum && Mathf.Abs(RB.velocity.x) > Mathf.Abs(targetSpeed) && Mathf.Sign(RB.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && LastOnGroundTime < 0)
         {
-
+            accelRate = 0; //Prevent any deceleration from happening
         }
+        #endregion
+
+        float speedDif = targetSpeed - RB.velocity.x;
+
+        float movement = speedDif * accelRate;
+
+        RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
+
     }
     #endregion
 
