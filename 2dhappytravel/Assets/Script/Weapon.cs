@@ -15,10 +15,14 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             animator.SetTrigger("Ranged");
-            Invoke("Shoot", 0.3f);
+            Invoke("Shoot", 0.1f);
+        }
+        else if(Input.GetKeyDown(KeyCode.J))
+        {
+            
         }
     }
 
