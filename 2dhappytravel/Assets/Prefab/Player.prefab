@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 5801629384089880863}
   - component: {fileID: 1586609229352874712}
   - component: {fileID: 3765489817597534771}
+  - component: {fileID: 2424612715490914516}
+  - component: {fileID: 6928253694888915198}
   - component: {fileID: 2951055822875197959}
-  - component: {fileID: 3500806025437645604}
-  - component: {fileID: 8266108793257686980}
-  - component: {fileID: 4667286746245514374}
-  - component: {fileID: 8733685072639466436}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -41,7 +39,7 @@ Transform:
   - {fileID: 7308897989565226930}
   - {fileID: 2673941534215472184}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5801629384089880863
 Rigidbody2D:
@@ -157,6 +155,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2424612715490914516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907686967679532013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d20de8fbf84424a1201fe445d9e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 100
+  rb: {fileID: 5801629384089880863}
+  animator: {fileID: 2951055822875197959}
+  isGrounded: 0
+  facingRight: 1
+  groundCheck: {fileID: 8392900840718890250}
+  wallCheck: {fileID: 3323432959836621181}
+  checkRadius: 0
+  whatIsTile:
+    serializedVersion: 2
+    m_Bits: 8
+  extraJumpsValue: 1
+  respawnPoint: {x: 0, y: 0, z: 0}
+  wallSlidingSpeed: 0
+  wallJumpingDuration: 0
+  wallJumpingPower: {x: 0, y: 0}
+  canMove: 0
+--- !u!114 &6928253694888915198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907686967679532013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c798e543be02f454d82ff47e3f4b53f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwAttack: 0.2
+  attackPos: {fileID: 2673941534215472184}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 128
+  attackRange: 0.84
+  damage: 3
 --- !u!95 &2951055822875197959
 Animator:
   serializedVersion: 5
@@ -177,116 +224,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3500806025437645604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d20de8fbf84424a1201fe445d9e7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jump: 250
-  rb: {fileID: 5801629384089880863}
-  animator: {fileID: 2951055822875197959}
-  isGrounded: 0
-  facingRight: 1
-  groundCheck: {fileID: 8392900840718890250}
-  wallCheck: {fileID: 3323432959836621181}
-  checkRadius: 0.2
-  whatIsTile:
-    serializedVersion: 2
-    m_Bits: 8
-  extraJumpsValue: 1
-  respawnPoint: {x: 0, y: 0, z: 0}
-  wallSlidingSpeed: -10
-  wallJumpingDuration: 0.75
-  wallJumpingPower: {x: 10, y: 5}
-  canMove: 0
---- !u!114 &8266108793257686980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53df6590b49f2349952f26de8eced51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.04438341, b: 0, a: 1}
-    key1: {r: 0.9037957, g: 1, b: 0, a: 1}
-    key2: {r: 0.36262476, g: 1, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 21627
-    ctime1: 43253
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  fill: {fileID: 0}
---- !u!114 &4667286746245514374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1396626dd0c260443955bf022001c0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPos: {fileID: 2673941534215472184}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 128
-  attackRange: 0.5
-  damage: 3
---- !u!114 &8733685072639466436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  maxhp: 10
-  lifeCount: 2
-  healthBar: {fileID: 8266108793257686980}
-  movement: {fileID: 3500806025437645604}
-  goText: {fileID: 0}
 --- !u!1 &1235420983846584460
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3718996187615170450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2039, y: -0.0489, z: 0}
+  m_LocalPosition: {x: 0.228, y: -0.038, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
