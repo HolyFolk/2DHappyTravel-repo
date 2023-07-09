@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NeoPlayermovement : MonoBehaviour
@@ -16,13 +17,13 @@ public class NeoPlayermovement : MonoBehaviour
     //boolean variables which control if player could do certain movement
     public bool IsFacingRight { get; private set; }
     public bool IsJumping { get; private set; }
-    public bool IsWalljumping { get; private set; }
+    public bool IsWallJumping { get; private set; }
     public bool IsDashing { get; private set; }
     public bool IsSliding { get; private set; }
 
     //Timers for state
     public float LastOnGroundTime { get; private set; }
-    public float LastOnWallTIme { get; private set; }
+    public float LastOnWallTime { get; private set; }
     public float LastOnWallRightTime { get; private set; }
     public float LastOnWallLeftTime { get; private set; }
 
@@ -35,7 +36,7 @@ public class NeoPlayermovement : MonoBehaviour
     private int _lastWallJumpDir;
 
     //Dash
-    private int _dashsLeft;
+    private int _dashesLeft;
     private bool _dashRefilling;
     private Vector2 _lastDashDir;
     private bool _isDashAttacking;
@@ -44,7 +45,7 @@ public class NeoPlayermovement : MonoBehaviour
     #region INPUT PARAMETERS
     private Vector2 _moveInput;
 
-    public float LastPresedJumpTime { get; private set; }
+    public float LastPressedJumpTime { get; private set; }
     public float LastPressedDashTime { get; private set; }
     #endregion
 
@@ -82,7 +83,7 @@ public class NeoPlayermovement : MonoBehaviour
 
     public void OnJumpUpInput()
     {
-        if(CanJumpCut() || CanWallJumpCut())
+        if (CanJumpCut() || CanWallJumpCut())
         {
             _isJumpCut = true;
         }
@@ -115,10 +116,41 @@ public class NeoPlayermovement : MonoBehaviour
     #endregion
 
     #region RUN METHODS
-    private void Run() { 
+    private void Run(float lerpAmount) {
+        float targetSpeed = _moveInput.x * Data.runMaxSpeed;
+        targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, lerpAmount);
 
+        #region Calculate AccelRate
+        float accelRate;
+
+        //Gets an acceleration value based on if we are accelerating(includes turning) or trying to decelarate(stop)
+        if (LastOnGroundTime > 0)
+        {
+            accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.runAccelAmount : Data.runDeccelAmount;
+        }
+        else {
+            accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.runAccelAmount * Data.accelInAir : Data.runDeccelAmount * Data.deccelInAir;
+        }
+        #endregion
+
+
+        #region Add Bonus Jump Apex Acceleration
+        if ((IsJumping || IsWallJumping || _isJumpFalling) && Mathf.Abs(RB.velocity.y) < Data.jumpHangTimeThreshold)
+        {
+            accelRate *= Data.jumpHangAccelerationMult;
+            targetSpeed *= Data.jumpHangMaxSpeedMult;
+        }
+        #endregion
+
+        #region Conserve Momentum
+        if (Data.doConserveMomentum && Mathf.Abs(RB.velocity.x) > Mathf.Abs(targetSpeed) && Mathf.Sign(RB.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && LastOnGroundTime < 0)
+        {
+
+        }
     }
     #endregion
+
+
 
 
     #region CHECK METHODS
