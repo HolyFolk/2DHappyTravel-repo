@@ -13,10 +13,6 @@ GameObject:
   - component: {fileID: 1586609229352874712}
   - component: {fileID: 3765489817597534771}
   - component: {fileID: 2951055822875197959}
-  - component: {fileID: 3500806025437645604}
-  - component: {fileID: 8266108793257686980}
-  - component: {fileID: 4667286746245514374}
-  - component: {fileID: 8733685072639466436}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -40,6 +36,7 @@ Transform:
   - {fileID: 3323432959836621181}
   - {fileID: 7308897989565226930}
   - {fileID: 2673941534215472184}
+  - {fileID: 2213516043749075938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,116 +174,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3500806025437645604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d20de8fbf84424a1201fe445d9e7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jump: 250
-  rb: {fileID: 5801629384089880863}
-  animator: {fileID: 2951055822875197959}
-  isGrounded: 0
-  facingRight: 1
-  groundCheck: {fileID: 8392900840718890250}
-  wallCheck: {fileID: 3323432959836621181}
-  checkRadius: 0.2
-  whatIsTile:
-    serializedVersion: 2
-    m_Bits: 8
-  extraJumpsValue: 1
-  respawnPoint: {x: 0, y: 0, z: 0}
-  wallSlidingSpeed: -10
-  wallJumpingDuration: 0.75
-  wallJumpingPower: {x: 10, y: 5}
-  canMove: 0
---- !u!114 &8266108793257686980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53df6590b49f2349952f26de8eced51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.04438341, b: 0, a: 1}
-    key1: {r: 0.9037957, g: 1, b: 0, a: 1}
-    key2: {r: 0.36262476, g: 1, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 21627
-    ctime1: 43253
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  fill: {fileID: 0}
---- !u!114 &4667286746245514374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1396626dd0c260443955bf022001c0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPos: {fileID: 2673941534215472184}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 128
-  attackRange: 0.5
-  damage: 3
---- !u!114 &8733685072639466436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  maxhp: 10
-  lifeCount: 2
-  healthBar: {fileID: 8266108793257686980}
-  movement: {fileID: 3500806025437645604}
-  goText: {fileID: 0}
 --- !u!1 &1235420983846584460
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,9 +184,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3323432959836621181}
   m_Layer: 6
-  m_Name: Wall Check
+  m_Name: Front Wall Check
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -373,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4180248616066448931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0088, y: -0.199, z: -1.1455977}
+  m_LocalPosition: {x: 0.01, y: -0.2, z: -0.59}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -405,6 +292,37 @@ Transform:
   m_GameObject: {fileID: 6541004334906102321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.327, y: -0.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6280182731127950037}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6738155487106633839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2213516043749075938}
+  m_Layer: 6
+  m_Name: Back Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2213516043749075938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6738155487106633839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15, y: -0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
