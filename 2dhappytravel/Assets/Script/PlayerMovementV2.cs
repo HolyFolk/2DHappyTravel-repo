@@ -1,51 +1,39 @@
-/*
-	Created by @DawnosaurDev at youtube.com/c/DawnosaurStudios
-	Thanks so much for checking this out and I hope you find it helpful! 
-	If you have any further queries, questions or feedback feel free to reach out on my twitter or leave a comment on youtube :D
-
-	Feel free to use this in your own games, and I'd love to see anything you make!
- */
-
 using System.Collections;
 using UnityEngine;
 
 public class PlayerMovementV2 : MonoBehaviour
 {
-    //Scriptable object which holds all the player's movement parameters. If you don't want to use it
-    //just paste in all the parameters, though you will need to manuly change all references in this script
+   
     public PlayerData Data;
 
     #region COMPONENTS
     public Rigidbody2D RB { get; private set; }
-    //Script to handle all player animations, all references can be safely removed if you're importing into your own project.
-   //public PlayerAnimator AnimHandler { get; private set; }
+    private Animator animator;
     #endregion
 
     #region STATE PARAMETERS
-    //Variables control the various actions the player can perform at any time.
-    //These are fields which can are public allowing for other sctipts to read them
-    //but can only be privately written to.
+    
     public bool IsFacingRight { get; private set; }
     public bool IsJumping { get; private set; }
     public bool IsWallJumping { get; private set; }
     public bool IsDashing { get; private set; }
     public bool IsSliding { get; private set; }
 
-    //Timers (also all fields, could be private and a method returning a bool could be used)
+    
     public float LastOnGroundTime { get; private set; }
     public float LastOnWallTime { get; private set; }
     public float LastOnWallRightTime { get; private set; }
     public float LastOnWallLeftTime { get; private set; }
 
-    //Jump
+    
     private bool _isJumpCut;
     private bool _isJumpFalling;
 
-    //Wall Jump
+    
     private float _wallJumpStartTime;
     private int _lastWallJumpDir;
 
-    //Dash
+    
     private int _dashesLeft;
     private bool _dashRefilling;
     private Vector2 _lastDashDir;
@@ -62,10 +50,10 @@ public class PlayerMovementV2 : MonoBehaviour
     #endregion
 
     #region CHECK PARAMETERS
-    //Set all of these up in the inspector
+    
     [Header("Checks")]
     [SerializeField] private Transform _groundCheckPoint;
-    //Size of groundCheck depends on the size of your character generally you want them slightly small than width (for ground) and height (for the wall check)
+    
     [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.49f, 0.03f);
     [Space(5)]
     [SerializeField] private Transform _frontWallCheckPoint;
@@ -81,7 +69,7 @@ public class PlayerMovementV2 : MonoBehaviour
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
-        //AnimHandler = GetComponent<PlayerAnimator>();
+        animator = GetComponent<Animator>();
         playerInput = new PlayerInputs();
     }
 
@@ -143,7 +131,7 @@ public class PlayerMovementV2 : MonoBehaviour
             {
                 if (LastOnGroundTime < -0.1f)
                 {
-                    //AnimHandler.justLanded = true;
+                    animator.SetBool("isGrounded", true);
                 }
 
                 LastOnGroundTime = Data.coyoteTime; //if so sets the lastGrounded to coyoteTime
@@ -336,9 +324,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
     private void Sleep(float duration)
     {
-        //Method used so we don't need to call StartCoroutine everywhere
-        //nameof() notation means we don't need to input a string directly.
-        //Removes chance of spelling mistakes and will improve error messages if any
+        
         StartCoroutine(nameof(PerformSleep), duration);
     }
 
@@ -397,12 +383,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
         //Convert this to a vector and apply to rigidbody
         RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
-
-        /*
-		 * For those interested here is what AddForce() will do
-		 * RB.velocity = new Vector2(RB.velocity.x + (Time.fixedDeltaTime  * speedDif * accelRate) / RB.mass, RB.velocity.y);
-		 * Time.fixedDeltaTime is by default in Unity 0.02 seconds equal to 50 FixedUpdate() calls per second
-		*/
+        animator.SetFloat("Speed", Mathf.Abs(movement));
     }
 
     private void Turn()
@@ -424,9 +405,7 @@ public class PlayerMovementV2 : MonoBehaviour
         LastOnGroundTime = 0;
 
         #region Perform Jump
-        //We increase the force applied if we are falling
-        //This means we'll always feel like we jump the same amount 
-        //(setting the player's Y velocity to 0 beforehand will likely work the same, but I find this more elegant :D)
+        
         float force = Data.jumpForce;
         if (RB.velocity.y < 0)
             force -= RB.velocity.y;

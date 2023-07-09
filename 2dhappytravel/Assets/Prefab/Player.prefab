@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5801629384089880863}
   - component: {fileID: 1586609229352874712}
   - component: {fileID: 3765489817597534771}
-  - component: {fileID: 2424612715490914516}
   - component: {fileID: 6928253694888915198}
   - component: {fileID: 2951055822875197959}
+  - component: {fileID: 8699671195890826908}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 2673941534215472184}
   - {fileID: 2213516043749075938}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5801629384089880863
 Rigidbody2D:
@@ -156,36 +156,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2424612715490914516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907686967679532013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d20de8fbf84424a1201fe445d9e7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jump: 100
-  rb: {fileID: 5801629384089880863}
-  animator: {fileID: 2951055822875197959}
-  isGrounded: 0
-  facingRight: 1
-  groundCheck: {fileID: 8392900840718890250}
-  wallCheck: {fileID: 3323432959836621181}
-  checkRadius: 0
-  whatIsTile:
-    serializedVersion: 2
-    m_Bits: 8
-  extraJumpsValue: 1
-  respawnPoint: {x: 0, y: 0, z: 0}
-  wallSlidingSpeed: 0
-  wallJumpingDuration: 0
-  wallJumpingPower: {x: 0, y: 0}
-  canMove: 0
 --- !u!114 &6928253694888915198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,12 +169,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwAttack: 0.2
+  aimPoint: {fileID: 7308897989565226930}
   attackPos: {fileID: 2673941534215472184}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 128
   attackRange: 0.84
   damage: 3
+  animator: {fileID: 2951055822875197959}
+  projectile: {fileID: 768872041037468206, guid: 5eca419d92e44104cb5da5e136b54b5b, type: 3}
 --- !u!95 &2951055822875197959
 Animator:
   serializedVersion: 5
@@ -225,6 +198,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8699671195890826908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907686967679532013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0aca42dcb32724e951b2a048dc59e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: b521002fe0b9a834ca3b06c5c38da36c, type: 2}
+  _groundCheckPoint: {fileID: 8392900840718890250}
+  _groundCheckSize: {x: 0.49, y: 0.03}
+  _frontWallCheckPoint: {fileID: 3323432959836621181}
+  _backWallCheckPoint: {fileID: 2213516043749075938}
+  _wallCheckSize: {x: 0.5, y: 1}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1235420983846584460
 GameObject:
   m_ObjectHideFlags: 0
