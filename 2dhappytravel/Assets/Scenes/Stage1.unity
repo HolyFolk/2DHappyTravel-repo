@@ -1471,6 +1471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007150692}
   - component: {fileID: 1007150693}
+  - component: {fileID: 1007150694}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1564,6 +1565,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1007150694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007150691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53df6590b49f2349952f26de8eced51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1007150693}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.09377968, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0.045656204, a: 1}
+    key2: {r: 1, g: 0.83895683, b: 0, a: 0}
+    key3: {r: 0.22315216, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 21781
+    ctime2: 36044
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 29298
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1165846358}
 --- !u!1 &1090490580
 GameObject:
   m_ObjectHideFlags: 0
@@ -8494,6 +8539,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: goText
+      value: 
+      objectReference: {fileID: 1660507966}
+    - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1007150694}
+    - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: playerStat
+      value: 
+      objectReference: {fileID: 11400000, guid: cdbfa6b0b34397842800c54951624c54, type: 2}
     - target: {fileID: 6280182731127950037, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: m_RootOrder
       value: 6

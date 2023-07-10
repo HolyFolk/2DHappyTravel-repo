@@ -8,7 +8,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
     #region COMPONENTS
     public Rigidbody2D RB { get; private set; }
-    private Animator animator;
+    public Animator animator;
     #endregion
 
     #region STATE PARAMETERS
