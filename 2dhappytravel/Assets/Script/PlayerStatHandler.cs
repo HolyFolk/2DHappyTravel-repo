@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerStatHandler : MonoBehaviour
 {
     [SerializeField] PlayerStat playerStat;
     public float hp = 10f;
-    public float maxhp =10f;
+    public float maxhp = 10f;
     public int lifeCount = 5;
     public HealthBarBehaviour healthBar;
     public PlayerMovementV2 movement;
