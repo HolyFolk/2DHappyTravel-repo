@@ -39,6 +39,16 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public void TriggerMelee()
+    {
+        animator.SetTrigger("Melee");
+        enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+    }
+
+    public void TriggerRanged() {
+        animator.SetTrigger("Ranged");
+    }
+
     #endregion
     void OnDrawGizmosSelected()
     {
