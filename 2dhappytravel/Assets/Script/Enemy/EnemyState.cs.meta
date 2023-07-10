@@ -3,7 +3,9 @@ guid: b1ba0c9aa2d737f40a7077f93096b001
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dead: {fileID: 8300000, guid: a691b4f0336766a40a4a66f3264c6459, type: 3}
+  - bloodeffect: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

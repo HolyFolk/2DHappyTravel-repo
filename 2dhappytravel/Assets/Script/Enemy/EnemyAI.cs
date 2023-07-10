@@ -5,8 +5,6 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
 
-    public Transform target;
-
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
@@ -16,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+    private GameObject player;
+    private Transform target;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -28,6 +28,8 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, .5f);
+        player = GameObject.FindGameObjectWithTag("Player");
+        target = player.transform;
     }
 
     void UpdatePath()
@@ -83,8 +85,6 @@ public class EnemyAI : MonoBehaviour
             //isFacingLeft = true;
         }
 
-        Debug.Log(isFacingRight);
-        Debug.Log(force.x);
 
     }
 

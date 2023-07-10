@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyState : MonoBehaviour
 {
-    public float health;
+    public float health = 5f;
 
     private AudioSource audioSource;
     public AudioClip dead;

@@ -6,6 +6,7 @@ public class Projectiles : MonoBehaviour
 {
     public float pSpeed = 4.5f;
     public Rigidbody2D rb;
+    private 
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class Projectiles : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        var enemy = collision.collider.GetComponent<Enemy>();
+        var enemy = collision.collider.GetComponent<EnemyState>();
         if (enemy)
         {
             enemy.TakeDamage(1.2f);
