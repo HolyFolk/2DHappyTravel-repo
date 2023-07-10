@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 10
   _maxHp: 10
-  _lifecount: 5
+  _lifecount: 0
+  _respawnPoint: {x: 18.39, y: -3.28, z: 0}

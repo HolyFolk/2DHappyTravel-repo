@@ -9,9 +9,14 @@ public class EnemyState : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip dead;
     public GameObject bloodeffect;
+    private GameObject player;
+    public PlayerStatHandler playerStatHandler;
+    public float damage;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerStatHandler = player.GetComponent<PlayerStatHandler>();
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
@@ -35,5 +40,10 @@ public class EnemyState : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
+    }
+
+    public void Attack()
+    {
+        playerStatHandler.TakeDamage(damage);
     }
 }

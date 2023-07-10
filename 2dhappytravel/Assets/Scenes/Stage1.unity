@@ -2141,6 +2141,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4732965659174717535, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
   m_PrefabInstance: {fileID: 1241607853}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1300686234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+  m_PrefabInstance: {fileID: 2528420806750130737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300686235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+  m_PrefabInstance: {fileID: 2528420806750130737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0aca42dcb32724e951b2a048dc59e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305464478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +2210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a691b4f0336766a40a4a66f3264c6459, type: 3}
     - target: {fileID: 1829931485418212186, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829931485418212186, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
       propertyPath: health
       value: 5
       objectReference: {fileID: 0}
@@ -2195,6 +2221,10 @@ PrefabInstance:
       propertyPath: bloodeffect
       value: 
       objectReference: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
+    - target: {fileID: 1829931485418212186, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
+      propertyPath: playerStatHandler
+      value: 
+      objectReference: {fileID: 1300686234}
     - target: {fileID: 3508388346262087543, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -8544,9 +8574,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1660507966}
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 1300686235}
+    - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1007150694}
+    - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: lifeCount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: playerStat
       value: 

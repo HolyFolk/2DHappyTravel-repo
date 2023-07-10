@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: b521002fe0b9a834ca3b06c5c38da36c, type: 2}
+  animator: {fileID: 0}
   _groundCheckPoint: {fileID: 8392900840718890250}
   _groundCheckSize: {x: 0.49, y: 0.03}
   _frontWallCheckPoint: {fileID: 3323432959836621181}
@@ -232,11 +233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStat: {fileID: 11400000, guid: cdbfa6b0b34397842800c54951624c54, type: 2}
   hp: 10
   maxhp: 10
   lifeCount: 1
   healthBar: {fileID: 0}
-  movement: {fileID: 0}
+  movement: {fileID: 8699671195890826908}
   goText: {fileID: 0}
 --- !u!1 &1235420983846584460
 GameObject:

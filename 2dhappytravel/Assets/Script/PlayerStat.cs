@@ -37,4 +37,12 @@ public class PlayerStat : ScriptableObject
         get { return _respawnPoint; }
         set { _respawnPoint = value; }
     }
+
+    [SerializeField]
+    private bool _isNull;
+    public bool IsNull
+    {
+        get { return _isNull; }
+        set { _isNull = value; }
+    }
 }
