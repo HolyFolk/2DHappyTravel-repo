@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1829eb63197158e4fab0ce8907af3ec5, type: 3}
   m_Name: HollowKnight
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   gravityStrength: -52
   gravityScale: 5.3007135
+=======
+  gravityStrength: -32
+  gravityScale: 3.2619774
+>>>>>>> Stashed changes
   fallGravityMult: 2
   maxFallSpeed: 18
-  fastFallGravityMult: 1
+  fastFallGravityMult: 3
   maxFastFallSpeed: 20
+<<<<<<< Updated upstream
   runMaxSpeed: 6.5
   runAcceleration: 6.5
   runAccelAmount: 50
@@ -29,6 +35,19 @@ MonoBehaviour:
   jumpHeight: 6.5
   jumpTimeToApex: 0.5
   jumpForce: 26
+=======
+  runMaxSpeed: 4.5
+  runAcceleration: 2
+  runAccelAmount: 22.222221
+  runDecceleration: 4
+  runDeccelAmount: 44.444443
+  accelInAir: 0.01
+  deccelInAir: 1
+  doConserveMomentum: 0
+  jumpHeight: 4
+  jumpTimeToApex: 0.5
+  jumpForce: 16
+>>>>>>> Stashed changes
   jumpCutGravityMult: 1
   jumpHangGravityMult: 1
   jumpHangTimeThreshold: 0

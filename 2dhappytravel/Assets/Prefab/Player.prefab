@@ -20,7 +20,11 @@ GameObject:
   - component: {fileID: 8733685072639466436}
 =======
   - component: {fileID: 8699671195890826908}
+<<<<<<< Updated upstream
   - component: {fileID: 3103486033270115719}
+>>>>>>> Stashed changes
+=======
+  - component: {fileID: 5880972062451469880}
 >>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Player
@@ -46,7 +50,11 @@ Transform:
   - {fileID: 7308897989565226930}
   m_Father: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_RootOrder: 5
+=======
+  m_RootOrder: 6
+>>>>>>> Stashed changes
 =======
   m_RootOrder: 6
 >>>>>>> Stashed changes
@@ -197,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766d20de8fbf84424a1201fe445d9e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speed: 10
   jump: 250
   rb: {fileID: 5801629384089880863}
@@ -220,6 +229,19 @@ MonoBehaviour:
 =======
 --- !u!114 &3103486033270115719
 >>>>>>> Stashed changes
+=======
+  Data: {fileID: 11400000, guid: b521002fe0b9a834ca3b06c5c38da36c, type: 2}
+  horizontal: 0
+  _groundCheckPoint: {fileID: 8392900840718890250}
+  _groundCheckSize: {x: 0.49, y: 0.03}
+  _frontWallCheckPoint: {fileID: 3323432959836621181}
+  _backWallCheckPoint: {fileID: 2213516043749075938}
+  _wallCheckSize: {x: 0.5, y: 0.75}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &5880972062451469880
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,6 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 907686967679532013}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: b53df6590b49f2349952f26de8eced51, type: 3}
   m_Name: 
@@ -301,6 +324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 133a77a9ee7caed41853939f8a8f5a8e, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f67dea3ecfa3b324585d2df15d0a34ea, type: 3}
+>>>>>>> Stashed changes
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -327,8 +356,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
     m_ActionId: a5a0d8f6-8700-4331-8b67-50f0d04df136
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+=======
+    m_ActionId: adbd636a-a1c3-4a99-8f4c-ae41c1deed2a
+    m_ActionName: Player/Movement[/Keyboard/z,/Keyboard/c,/Keyboard/numpad1,/Keyboard/numpad3]
+>>>>>>> Stashed changes
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8699671195890826908}
@@ -343,6 +377,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
     m_ActionId: f725362e-b3a3-4c07-b038-2a4ed28d5359
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -351,6 +386,19 @@ MonoBehaviour:
     m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard default
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+>>>>>>> Stashed changes
+=======
+    m_ActionId: a584e578-c027-441d-870a-1f440127047e
+    m_ActionName: Player/Jump1[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fec936b3-d289-4841-a02d-0ef05123d3a2
+    m_ActionName: Player/Jump2[/Keyboard/numpad2]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard zxc
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -379,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235420983846584460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.142, y: -0.071, z: 0}
+  m_LocalPosition: {x: 0.142, y: -0.033, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,6 +490,40 @@ Transform:
   m_GameObject: {fileID: 6541004334906102321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.371, y: 0.037, z: 0}
+<<<<<<< Updated upstream
+=======
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6280182731127950037}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6738155487106633839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2213516043749075938}
+  m_Layer: 6
+  m_Name: Back Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2213516043749075938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6738155487106633839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15, y: -0.03299999, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

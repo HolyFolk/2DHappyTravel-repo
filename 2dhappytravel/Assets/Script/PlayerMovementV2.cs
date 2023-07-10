@@ -11,7 +11,11 @@ public class PlayerMovementV2 : MonoBehaviour
     #region COMPONENTS
     public Rigidbody2D RB { get; private set; }
     private Animator animator;
+<<<<<<< Updated upstream
     private float horizontal;
+=======
+    public float horizontal;
+>>>>>>> Stashed changes
     #endregion
 
     #region STATE PARAMETERS
@@ -93,7 +97,11 @@ public class PlayerMovementV2 : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+<<<<<<< Updated upstream
         _moveInput.x = context.ReadValue<Vector2>().x;
+=======
+        horizontal = context.ReadValue<Vector2>().x;
+>>>>>>> Stashed changes
     }
 
     private void Update()
@@ -252,13 +260,24 @@ public class PlayerMovementV2 : MonoBehaviour
                 //Much higher gravity if holding down
                 SetGravityScale(Data.gravityScale * Data.fastFallGravityMult);
                 //Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
+<<<<<<< Updated upstream
                 RB.velocity = new Vector2(horizontal * 0.1f, Mathf.Max(RB.velocity.y, -Data.maxFastFallSpeed));
+=======
+                RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -Data.maxFastFallSpeed));
+                //RB.velocity = new Vector2(horizontal, Mathf.Max(RB.velocity.y, -Data.maxFastFallSpeed));
+>>>>>>> Stashed changes
             }
             else if (_isJumpCut)
             {
                 //Higher gravity if jump button released
                 SetGravityScale(Data.gravityScale * Data.jumpCutGravityMult);
+<<<<<<< Updated upstream
                 RB.velocity = new Vector2(horizontal * 0.1f, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+=======
+                RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+                //RB.velocity = new Vector2(horizontal, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+
+>>>>>>> Stashed changes
             }
             else if ((IsJumping || IsWallJumping || _isJumpFalling) && Mathf.Abs(RB.velocity.y) < Data.jumpHangTimeThreshold)
             {
@@ -269,7 +288,12 @@ public class PlayerMovementV2 : MonoBehaviour
                 //Higher gravity if falling
                 SetGravityScale(Data.gravityScale * Data.fallGravityMult);
                 //Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
+<<<<<<< Updated upstream
                 RB.velocity = new Vector2(horizontal * 0.1f, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+=======
+                RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+                //RB.velocity = new Vector2(horizontal, Mathf.Max(RB.velocity.y, -Data.maxFallSpeed));
+>>>>>>> Stashed changes
             }
             else
             {
@@ -351,7 +375,12 @@ public class PlayerMovementV2 : MonoBehaviour
         //Calculate the direction we want to move in and our desired velocity
         float targetSpeed = _moveInput.x * Data.runMaxSpeed;
         //We can reduce are control using Lerp() this smooths changes to are direction and speed
+<<<<<<< Updated upstream
         targetSpeed = Mathf.Lerp(horizontal * 0.1f, targetSpeed, lerpAmount);
+=======
+        //targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, lerpAmount);
+        targetSpeed = Mathf.Lerp(horizontal, targetSpeed, lerpAmount);
+>>>>>>> Stashed changes
 
         #region Calculate AccelRate
         float accelRate;
@@ -375,6 +404,10 @@ public class PlayerMovementV2 : MonoBehaviour
 
         #region Conserve Momentum
         //We won't slow the player down if they are moving in their desired direction but at a greater speed than their maxSpeed
+<<<<<<< Updated upstream
+=======
+        //if (Data.doConserveMomentum && Mathf.Abs(RB.velocity.x) > Mathf.Abs(targetSpeed) && Mathf.Sign(RB.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && LastOnGroundTime < 0)
+>>>>>>> Stashed changes
         if (Data.doConserveMomentum && Mathf.Abs(horizontal) > Mathf.Abs(targetSpeed) && Mathf.Sign(horizontal) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && LastOnGroundTime < 0)
         {
             //Prevent any deceleration from happening, or in other words conserve are current momentum
@@ -384,7 +417,12 @@ public class PlayerMovementV2 : MonoBehaviour
         #endregion
 
         //Calculate difference between current velocity and desired velocity
+<<<<<<< Updated upstream
         float speedDif = targetSpeed - horizontal * 0.1f;
+=======
+        //float speedDif = targetSpeed - RB.velocity.x;
+        float speedDif = targetSpeed - horizontal;
+>>>>>>> Stashed changes
         //Calculate force along x-axis to apply to thr player
 
         float movement = speedDif * accelRate;
@@ -435,8 +473,16 @@ public class PlayerMovementV2 : MonoBehaviour
         Vector2 force = new Vector2(Data.wallJumpForce.x, Data.wallJumpForce.y);
         force.x *= dir; //apply force in opposite direction of wall
 
+<<<<<<< Updated upstream
         if (Mathf.Sign(horizontal * 0.1f) != Mathf.Sign(force.x))
             force.x -= horizontal * 0.1f;
+=======
+        //if (Mathf.Sign(RB.velocity.x) != Mathf.Sign(force.x))
+        //    force.x -= RB.velocity.x;
+
+        if (Mathf.Sign(horizontal) != Mathf.Sign(force.x))
+            force.x -= horizontal;
+>>>>>>> Stashed changes
 
         if (RB.velocity.y < 0) //checks whether player is falling, if so we subtract the velocity.y (counteracting force of gravity). This ensures the player always reaches our desired jump force or greater
             force.y -= RB.velocity.y;
