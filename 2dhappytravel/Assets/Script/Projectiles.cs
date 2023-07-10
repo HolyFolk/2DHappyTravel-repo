@@ -5,10 +5,11 @@ using UnityEngine;
 public class Projectiles : MonoBehaviour
 {
     public float pSpeed = 4.5f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * pSpeed;
     }
 
