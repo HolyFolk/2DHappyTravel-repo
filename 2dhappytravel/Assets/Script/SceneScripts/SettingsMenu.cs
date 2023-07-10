@@ -32,7 +32,7 @@ public class SettingsMenu : MonoBehaviour
         toggleFullScreen = fullScreen.GetComponent<Toggle>();
         resolutionDropdown = resolutionField.GetComponent<Dropdown>();
 
-       resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         //int currentResolutionIndex = 0;

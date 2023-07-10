@@ -52,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (enemiesToDamage[i] != null)
             {
-                enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                enemiesToDamage[i].GetComponent<EnemyState>().TakeDamage(damage);
             }
         }
     }

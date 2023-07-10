@@ -53,7 +53,7 @@ public class WTSHealth : MonoBehaviour
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null)
         {
-            colInfo.GetComponent<PlayerStat>().TakeDamage(attackDamage);
+            colInfo.GetComponent<PlayerStatHandler>().TakeDamage(attackDamage);
         }
     }
 

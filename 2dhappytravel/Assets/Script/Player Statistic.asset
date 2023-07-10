@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8885a24c21e00004faa81375a81e464b, type: 3}
   m_Name: Player Statistic
   m_EditorClassIdentifier: 
-  _hp: 0
+  _hp: 10
+  _maxHp: 10
   _lifecount: 0
+  _respawnPoint: {x: 18.39, y: -3.28, z: 0}

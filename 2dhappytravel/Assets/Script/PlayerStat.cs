@@ -1,79 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerStat : MonoBehaviour
+[CreateAssetMenu]
+
+public class PlayerStat : ScriptableObject
 {
-    public float hp;
-    public float maxhp = 10;
-    public int lifeCount = 1;
-    public HealthBarBehaviour healthBar;
-    public PlayerMovement movement;
-    public Text goText;
-    private Collider2D playerCollider;
-    void Start()
+    [SerializeField]
+    private float _hp;
+    public float HP
     {
-        hp = maxhp;
-        healthBar.SetMaxHealth(maxhp);
-        healthBar.SetHealth(hp);
-
-        GameObject player = GameObject.Find("Player");
-        playerCollider = player.GetComponent<Collider2D>();
+        get { return _hp; }
+        set { _hp = value; }
     }
 
-    public void TakeDamage(float amount)
+    [SerializeField]
+    private float _maxHp;
+    public float MaxHp
     {
-        hp -= amount;
-        healthBar.SetHealth(hp);
-
-        if(gameObject.transform.position.y < -10)
-        {
-            TakeDamage(5);
-        }
-
-        if (hp <= 0 && lifeCount > 0)
-        {
-            Dead();
-            Invoke("Respawn", 2f);
-            lifeCount--;
-        } else if(hp <= 0 && lifeCount == 0){
-            Dead();
-            GO();
-        }
+        get { return _maxHp; }
+        set { _maxHp = value; }
     }
 
-    public void Dead()
+    [SerializeField]
+    private int _lifecount;
+    public int LifeCount
     {
-        movement.canMove = false;
-        movement.animator.enabled = false;
-        playerCollider.enabled= false;
-        transform.Rotate(0, 0, 90);
-        movement.rb.constraints = RigidbodyConstraints2D.FreezePosition;
-    }
-    public void Respawn()
-    {
-        movement.animator.enabled = true;
-        transform.Rotate(0, 0, -90);
-        movement.rb.constraints = RigidbodyConstraints2D.None;
-        movement.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        movement.canMove = true;
-        playerCollider.enabled = true;
-        transform.position = movement.respawnPoint;
-        hp = maxhp;
-        healthBar.SetHealth(maxhp);
+        get { return _lifecount; }
+        set { _lifecount = value; }
     }
 
-    public void GO()
+    [SerializeField]
+    private Vector3 _respawnPoint;
+    public Vector3 RespawnPoint
     {
-        goText.gameObject.SetActive(true);
+        get { return _respawnPoint; }
+        set { _respawnPoint = value; }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    [SerializeField]
+    private bool _isNull;
+    public bool IsNull
     {
-        if (collision.gameObject.tag == "Respawn")
-        {
-            movement.respawnPoint = collision.gameObject.transform.position;
-        }
+        get { return _isNull; }
+        set { _isNull = value; }
     }
 }

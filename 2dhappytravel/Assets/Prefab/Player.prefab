@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6928253694888915198}
   - component: {fileID: 2951055822875197959}
   - component: {fileID: 8699671195890826908}
+  - component: {fileID: 3143866472846013490}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: b521002fe0b9a834ca3b06c5c38da36c, type: 2}
+  animator: {fileID: 0}
   _groundCheckPoint: {fileID: 8392900840718890250}
   _groundCheckSize: {x: 0.49, y: 0.03}
   _frontWallCheckPoint: {fileID: 3323432959836621181}
@@ -219,6 +221,25 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &3143866472846013490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907686967679532013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStat: {fileID: 11400000, guid: cdbfa6b0b34397842800c54951624c54, type: 2}
+  hp: 10
+  maxhp: 10
+  lifeCount: 1
+  healthBar: {fileID: 0}
+  movement: {fileID: 8699671195890826908}
+  goText: {fileID: 0}
 --- !u!1 &1235420983846584460
 GameObject:
   m_ObjectHideFlags: 0
