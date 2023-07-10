@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1829eb63197158e4fab0ce8907af3ec5, type: 3}
   m_Name: HollowKnight
   m_EditorClassIdentifier: 
-  gravityStrength: -52
-  gravityScale: 5.3007135
+  gravityStrength: -48
+  gravityScale: 4.8929663
   fallGravityMult: 2
   maxFallSpeed: 18
   fastFallGravityMult: 1
   maxFastFallSpeed: 20
-  runMaxSpeed: 9.5
-  runAcceleration: 9.5
-  runAccelAmount: 50
-  runDecceleration: 9.5
-  runDeccelAmount: 50
+  runMaxSpeed: 6.5
+  runAcceleration: 6
+  runAccelAmount: 46.153847
+  runDecceleration: 6
+  runDeccelAmount: 46.153847
   accelInAir: 1
   deccelInAir: 1
   doConserveMomentum: 1
-  jumpHeight: 6.5
+  jumpHeight: 6
   jumpTimeToApex: 0.5
-  jumpForce: 26
+  jumpForce: 24
   jumpCutGravityMult: 1
   jumpHangGravityMult: 1
   jumpHangTimeThreshold: 0
   jumpHangAccelerationMult: 1
-  jumpHangMaxSpeedMult: 1
-  wallJumpForce: {x: 8.5, y: 20}
-  wallJumpRunLerp: 0.075
+  jumpHangMaxSpeedMult: 0.8
+  wallJumpForce: {x: 8, y: 15}
+  wallJumpRunLerp: 0.5
   wallJumpTime: 0.3
   doTurnOnWallJump: 0
   slideSpeed: -12
