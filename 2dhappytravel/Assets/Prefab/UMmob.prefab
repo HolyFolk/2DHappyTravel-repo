@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 6417030767978083189}
   - component: {fileID: 5839047292543749847}
   - component: {fileID: 5546535732278203491}
-  - component: {fileID: 8381427132635127566}
   - component: {fileID: 888771836503530142}
   - component: {fileID: 506228197929735856}
   m_Layer: 7
@@ -183,21 +182,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8381427132635127566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7879061192892756349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ba0c9aa2d737f40a7077f93096b001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  dead: {fileID: 8300000, guid: 89c7a1c9c7c86a1438a2ca1e42478c91, type: 3}
-  bloodeffect: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
 --- !u!95 &888771836503530142
 Animator:
   serializedVersion: 5
