@@ -13,10 +13,15 @@ GameObject:
   - component: {fileID: 1586609229352874712}
   - component: {fileID: 3765489817597534771}
   - component: {fileID: 2951055822875197959}
+<<<<<<< Updated upstream
   - component: {fileID: 3500806025437645604}
   - component: {fileID: 8266108793257686980}
   - component: {fileID: 4667286746245514374}
   - component: {fileID: 8733685072639466436}
+=======
+  - component: {fileID: 8699671195890826908}
+  - component: {fileID: 3103486033270115719}
+>>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -40,7 +45,11 @@ Transform:
   - {fileID: 3323432959836621181}
   - {fileID: 7308897989565226930}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 5
+=======
+  m_RootOrder: 6
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5801629384089880863
 Rigidbody2D:
@@ -200,6 +209,7 @@ MonoBehaviour:
   whatIsTile:
     serializedVersion: 2
     m_Bits: 8
+<<<<<<< Updated upstream
   extraJumpsValue: 1
   respawnPoint: {x: 0, y: 0, z: 0}
   wallSlidingSpeed: -10
@@ -207,6 +217,9 @@ MonoBehaviour:
   wallJumpingPower: {x: 10, y: 5}
   canMove: 0
 --- !u!114 &8266108793257686980
+=======
+--- !u!114 &3103486033270115719
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,6 +228,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 907686967679532013}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: b53df6590b49f2349952f26de8eced51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -282,6 +296,65 @@ MonoBehaviour:
   healthBar: {fileID: 8266108793257686980}
   movement: {fileID: 3500806025437645604}
   goText: {fileID: 0}
+=======
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 133a77a9ee7caed41853939f8a8f5a8e, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8699671195890826908}
+        m_TargetAssemblyTypeName: PlayerMovementV2, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5a0d8f6-8700-4331-8b67-50f0d04df136
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8699671195890826908}
+        m_TargetAssemblyTypeName: PlayerMovementV2, Assembly-CSharp
+        m_MethodName: OnJumpInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f725362e-b3a3-4c07-b038-2a4ed28d5359
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8459c828-5fe9-43c3-b512-3e6fcbb30e74
+    m_ActionName: Player/Attack[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard default
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1235420983846584460
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +429,7 @@ GameObject:
   m_Layer: 6
   m_Name: Aim Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -368,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6541004334906102321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.327, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.371, y: 0.037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
