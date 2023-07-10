@@ -3166,7 +3166,7 @@ GameObject:
   - component: {fileID: 1877091162}
   - component: {fileID: 1877091164}
   - component: {fileID: 1877091163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Air wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3296,6 +3296,10 @@ PrefabInstance:
     - target: {fileID: 65454049133182436, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_Name
       value: Road car (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 65454049133182436, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 747535998596485306, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_Mass
@@ -3811,6 +3815,10 @@ PrefabInstance:
     - target: {fileID: 65454049133182436, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_Name
       value: Road car
+      objectReference: {fileID: 0}
+    - target: {fileID: 65454049133182436, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 747535998596485306, guid: 47b790c4691c86141a19b2bb2ead04e4, type: 3}
       propertyPath: m_Mass
