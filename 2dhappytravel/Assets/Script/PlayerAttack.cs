@@ -59,6 +59,6 @@ public class PlayerAttack : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(projectile, aimPoint);
+        Instantiate(projectile, aimPoint.position, aimPoint.rotation);
     }
 }
