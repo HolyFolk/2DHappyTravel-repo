@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigUMmob Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8381427132635127566, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
+      propertyPath: health
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8941569471820005006, guid: d2c49dc89db24c74ea64785ea3c74d6a, type: 3}
       propertyPath: maxHit
       value: 15
