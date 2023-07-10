@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerStatHandler : MonoBehaviour
 {
-    [SerializeField] PlayerStat playerStat;
+    [SerializeField]
+    public PlayerStat playerStat;
     private float hp;
     private float maxhp;
     private int lifeCount;

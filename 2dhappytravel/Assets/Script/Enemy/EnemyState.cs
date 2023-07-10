@@ -5,14 +5,17 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     public float health = 5f;
+    public float damage;
 
     private AudioSource audioSource;
     public AudioClip dead;
     public GameObject bloodeffect;
+    private PlayerStatHandler playerStatHandler;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        playerStatHandler = GetComponent<PlayerStatHandler>();  
     }
     void Update()
     {
@@ -35,5 +38,10 @@ public class EnemyState : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
+    }
+
+    public void Attack()
+    {
+        playerStatHandler.TakeDamage(damage);
     }
 }
