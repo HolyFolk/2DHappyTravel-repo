@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ba0c9aa2d737f40a7077f93096b001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 7
   dead: {fileID: 8300000, guid: 89c7a1c9c7c86a1438a2ca1e42478c91, type: 3}
   bloodeffect: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
 --- !u!95 &888771836503530142
