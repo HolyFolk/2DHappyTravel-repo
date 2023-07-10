@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
-    public float speed;
+    public float health;
 
-    private Animator animator;
+    private AudioSource audioSource;
+    public AudioClip dead;
+    public GameObject bloodeffect;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
+    void Update()
+    {
+        if (health <= 0)
+        {
+            audioSource.PlayOneShot(dead);
+            Invoke("Dead", 0.1f);
+            Debug.Log("Dead");
+        }
     }
 
-    private void Update()
+    public void TakeDamage(float damage)
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        audioSource.Play();
+        Instantiate(bloodeffect, transform.position, Quaternion.identity);
+        health -= damage;
+        Debug.Log("Damage TAKEN !");
+    }
+
+    public void Dead()
+    {
+        Destroy(gameObject);
     }
 }
