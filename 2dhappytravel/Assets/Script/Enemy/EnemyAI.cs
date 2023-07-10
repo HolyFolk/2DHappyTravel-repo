@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    bool isFacingLeft = true;
+    bool isFacingRight = true;
     
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
     void UpdatePath()
     {
         if(seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+           seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p){
@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(path == null)
             return;
@@ -53,6 +53,7 @@ public class EnemyAI : MonoBehaviour
         if(currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
+            return;
         }
         else
         {
@@ -71,26 +72,25 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if(force.x >= 0.01f && isFacingLeft)
+        if(force.x >= 0.01f && !isFacingRight)
         {
            Flip();
             //isFacingLeft = false;
         }
-        else if (force.x <= -0.01f && isFacingLeft == false)
+        else if (force.x <= -0.01f && isFacingRight)
         {
             Flip();
             //isFacingLeft = true;
         }
 
-        Debug.Log(isFacingLeft);
+        Debug.Log(isFacingRight);
         Debug.Log(force.x);
 
     }
 
     private void Flip()
     {
-       
-        Debug.Log("flip");
-        isFacingLeft = !isFacingLeft;
+        transform.Rotate(0f, 180f, 0);
+        isFacingRight = !isFacingRight;
     }
 }
