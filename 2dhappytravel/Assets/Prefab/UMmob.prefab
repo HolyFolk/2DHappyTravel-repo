@@ -41,13 +41,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3508388346262087543}
   - component: {fileID: 6417030767978083189}
-  - component: {fileID: 5839047292543749847}
   - component: {fileID: 5546535732278203491}
   - component: {fileID: 888771836503530142}
   - component: {fileID: 506228197929735856}
   - component: {fileID: 6314088160693436894}
   - component: {fileID: 6751513000153768699}
   - component: {fileID: 1829931485418212186}
+  - component: {fileID: 6098107020041814591}
   m_Layer: 7
   m_Name: UMmob
   m_TagString: Mob
@@ -123,41 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5839047292543749847
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7879061192892756349}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.022585368, y: 0.0037642003}
-  m_Size: {x: 0.27482924, y: 0.35764217}
-  m_Direction: 0
 --- !u!50 &5546535732278203491
 Rigidbody2D:
   serializedVersion: 4
@@ -361,3 +326,51 @@ MonoBehaviour:
   bloodeffect: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
   playerStatHandler: {fileID: 0}
   damage: 2
+--- !u!60 &6098107020041814591
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879061192892756349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.16}
+      - {x: 0.13, y: -0.16}
+      - {x: -0.14, y: -0.16}
+  m_UseDelaunayMesh: 0
