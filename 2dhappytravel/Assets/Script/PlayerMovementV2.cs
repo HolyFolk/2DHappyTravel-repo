@@ -3,7 +3,15 @@ using UnityEngine;
 
 public class PlayerMovementV2 : MonoBehaviour
 {
-   
+    [SerializeField]
+    private string Horizontal;
+
+    [SerializeField]
+    private string Vertical;
+
+    [SerializeField]
+    private KeyCode JumpKey;
+
     public PlayerData Data;
 
     #region COMPONENTS
@@ -101,18 +109,18 @@ public class PlayerMovementV2 : MonoBehaviour
         #endregion
 
         #region INPUT HANDLER
-        _moveInput.x = Input.GetAxisRaw("Horizontal");
-        _moveInput.y = Input.GetAxisRaw("Vertical");
+        _moveInput.x = Input.GetAxisRaw(Horizontal);
+        _moveInput.y = Input.GetAxisRaw(Vertical);
 
         if (_moveInput.x != 0)
             CheckDirectionToFace(_moveInput.x > 0);
 
-        if (playerInput.Movement.Jump.ReadValue<float>() > 0.1f)
+        if (Input.GetKeyDown(JumpKey))
         {
             OnJumpInput();
         }
 
-        if (playerInput.Movement.Jump.ReadValue<float>() < 0.1f)
+        if (Input.GetKeyUp(JumpKey))
         {
             OnJumpUpInput();
         }
