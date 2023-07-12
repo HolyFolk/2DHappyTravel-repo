@@ -16,17 +16,23 @@ public class PlayerAttack : MonoBehaviour
     private Collider2D[] enemiesToDamage;
     public GameObject projectile;
 
+    #region variable for storing attack Keys
+    [SerializeField]
+    private KeyCode melee = KeyCode.J;
+    [SerializeField]
+    private KeyCode ranged = KeyCode.K;
+    #endregion
     void Update()
     {
     #region Attack Key
         if (attackCD <= 0)
         {
-            if(Input.GetKey(KeyCode.J))
+            if(Input.GetKey(melee))
             {
                 animator.SetTrigger("Melee");
                 enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
             }
-            else if(Input.GetKey(KeyCode.K))
+            else if(Input.GetKey(ranged))
             {
                 animator.SetTrigger("Ranged");
             }

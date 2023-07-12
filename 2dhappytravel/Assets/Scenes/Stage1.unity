@@ -4440,6 +4440,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c010ffd2e29fd73448b1d4d70a42f07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &908740372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+  m_PrefabInstance: {fileID: 2528420806750130737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0aca42dcb32724e951b2a048dc59e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915046127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7072,7 +7083,7 @@ PrefabInstance:
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1463973291}
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: healthBar
       value: 
@@ -7088,6 +7099,18 @@ PrefabInstance:
     - target: {fileID: 3323432959836621181, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765489817597534771, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765489817597534771, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765489817597534771, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8204279
       objectReference: {fileID: 0}
     - target: {fileID: 6280182731127950037, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: m_RootOrder
@@ -7137,6 +7160,14 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6928253694888915198, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: melee
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928253694888915198, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+      propertyPath: ranged
+      value: 47
+      objectReference: {fileID: 0}
     - target: {fileID: 7308897989565226930, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.371
@@ -7171,6 +7202,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6280182731127950037, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
   m_PrefabInstance: {fileID: 1463973288}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1463973291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
+  m_PrefabInstance: {fileID: 1463973288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0aca42dcb32724e951b2a048dc59e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1472520147
 GameObject:
   m_ObjectHideFlags: 0
@@ -18299,7 +18341,7 @@ PrefabInstance:
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 908740372}
     - target: {fileID: 3143866472846013490, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: healthBar
       value: 
@@ -18374,15 +18416,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: JumpKey
-      value: 307
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: Vertical
-      value: Vertal.1
+      value: Vertical
       objectReference: {fileID: 0}
     - target: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: Horizontal
-      value: Horizontal.1
+      value: Horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 8699671195890826908, guid: 94b60f1cf993f4d4a9d7ba5c734f15ee, type: 3}
       propertyPath: _wallCheckSize.y
