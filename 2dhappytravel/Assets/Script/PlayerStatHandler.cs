@@ -13,10 +13,10 @@ public class PlayerStatHandler : MonoBehaviour
     public int lifeCount = 5;
     public HealthBarBehaviour healthBar;
     
-    public Text goText;
     private Collider2D playerCollider;
     private bool isVulenerable = true;
     PlayerMovementV2 movement;
+    bool gameOver = false;
     void Awake()
     {
         playerCollider = player.GetComponent<Collider2D>();
@@ -71,8 +71,8 @@ public class PlayerStatHandler : MonoBehaviour
             playerStat.LifeCount=lifeCount;
         } else if(hp <= 0 && lifeCount == 0){
             Dead();
-            GO();
             playerStat.IsNull = true;
+            gameOver = true;
         }
     }
 
@@ -100,11 +100,6 @@ public class PlayerStatHandler : MonoBehaviour
         healthBar.SetHealth(maxhp);
     }
 
-    public void GO()
-    {
-        goText.gameObject.SetActive(true);
-    }
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Respawn")
@@ -113,5 +108,9 @@ public class PlayerStatHandler : MonoBehaviour
         }
     }
 
+    public bool isGameOver()
+    {
+        return gameOver;
+    }
     
 }
