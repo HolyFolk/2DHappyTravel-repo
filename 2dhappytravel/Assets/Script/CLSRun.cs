@@ -22,8 +22,7 @@ public class CLSRun : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float distance = Vector2.Distance(player.position, rb.position);
-        int cd = 0;
-        if (distance <= attackRange && cd % 2 == 0)
+        if (distance <= attackRange)
         {
             animator.SetTrigger("CLS attack");
         }

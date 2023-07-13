@@ -23,18 +23,12 @@ public class PoliceRun : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         float distance = Vector2.Distance(player.position, rb.position);
-        if (distance < checkDistance && distance > attackRange)
-        {
-            rb.MovePosition(newPos);
-        } else if (distance <= attackRange)
+        if (distance <= attackRange)
         {
             animator.SetTrigger("PoliceAT");
         } else
         {
-            animator.Play("PoliceIdle");
             animator.ResetTrigger("PoliceAT");
         }
     }

@@ -1106,7 +1106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276890044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.3, y: 129.2, z: 0}
+  m_LocalPosition: {x: -19.8, y: 128.6, z: 0}
   m_LocalScale: {x: 1, y: 93.23559, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6950,11 +6950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_Size.x
-      value: 200.21451
+      value: 201.36803
       objectReference: {fileID: 0}
     - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_Offset.x
-      value: -0.097839355
+      value: -0.6745987
       objectReference: {fileID: 0}
     - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_AutoTiling
@@ -6962,7 +6962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 200
+      value: 202.52338
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.9373882
       objectReference: {fileID: 0}
     - target: {fileID: 2149028039823074017, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -6978,11 +6982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4732965659174717535, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.8
+      value: 67.5383
       objectReference: {fileID: 0}
     - target: {fileID: 4732965659174717535, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 94.5
+      value: 94.5631
       objectReference: {fileID: 0}
     - target: {fileID: 4732965659174717535, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7018,7 +7022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6162509654583461952, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_Size.x
-      value: 200
+      value: 202.52338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162509654583461952, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9373882
       objectReference: {fileID: 0}
     - target: {fileID: 6162509654583461952, guid: 3bd359421f5dcd645a2833f9cf7b3809, type: 3}
       propertyPath: m_Sprite
@@ -9405,6 +9413,7 @@ GameObject:
   - component: {fileID: 1660507965}
   - component: {fileID: 1660507967}
   - component: {fileID: 1660507966}
+  - component: {fileID: 1660507968}
   m_Layer: 5
   m_Name: GOtext
   m_TagString: Untagged
@@ -9430,7 +9439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: 90}
+  m_AnchoredPosition: {x: 15, y: 90}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660507966
@@ -9475,6 +9484,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660507964}
   m_CullTransparentMesh: 1
+--- !u!82 &1660507968
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660507964}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb4f0f274a80f794096b5b107b388654, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1664455716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17496,7 +17601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872618745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -95.3}
+  m_LocalPosition: {x: 0, y: 90, z: -95.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18507,7 +18612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041307670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -95.3}
+  m_LocalPosition: {x: 0, y: 90, z: -95.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
