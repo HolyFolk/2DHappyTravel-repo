@@ -14,7 +14,8 @@ public class EnemyAI : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
-    private GameObject player;
+    private GameObject[] players;
+    private GameObject targetPlayer;
     private Transform target;
 
     Seeker seeker;
@@ -23,18 +24,29 @@ public class EnemyAI : MonoBehaviour
     bool isFacingRight = true;
     
     // Start is called before the first frame update
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, .5f);
-        player = GameObject.FindGameObjectWithTag("Player");
-        target = player.transform;
+        players= GameObject.FindGameObjectsWithTag("Player");
+        targetPlayer = players[0];
+        target = players[0].transform;
     }
 
     void UpdatePath()
     {
-        if(seeker.IsDone())
+        for (int i = 0; i < players.Length; i++)
+        {
+            float targetDistance = Vector2.Distance(rb.position, players[i].transform.position);
+            if (targetDistance < Vector2.Distance(rb.position, target.position))
+            {
+                target = players[i].transform;
+                targetPlayer = players[i];
+            }
+        }
+        if (seeker.IsDone())
            seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
@@ -92,5 +104,10 @@ public class EnemyAI : MonoBehaviour
     {
         transform.Rotate(0f, 180f, 0);
         isFacingRight = !isFacingRight;
+    }
+
+    public GameObject getTargetPlayer()
+    {
+        return targetPlayer;
     }
 }

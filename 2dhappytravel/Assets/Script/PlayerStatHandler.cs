@@ -7,20 +7,20 @@ using UnityEngine.UI;
 public class PlayerStatHandler : MonoBehaviour
 {
     [SerializeField] PlayerStat playerStat;
+    [SerializeField] GameObject player;
     public float hp = 10f;
     public float maxhp = 10f;
     public int lifeCount = 5;
     public HealthBarBehaviour healthBar;
-    public PlayerMovementV2 movement;
+    
     public Text goText;
     private Collider2D playerCollider;
     private bool isVulenerable = true;
+    PlayerMovementV2 movement;
     void Awake()
     {
-
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<Collider2D>();
-
+        movement = player.GetComponent<PlayerMovementV2>();
         if (playerStat.IsNull)
         {
             playerStat.HP = hp;

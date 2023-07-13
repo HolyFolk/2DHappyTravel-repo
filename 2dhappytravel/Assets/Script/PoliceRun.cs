@@ -7,6 +7,7 @@ public class PoliceRun : StateMachineBehaviour
     public float speed = 2.5f;
     public float checkDistance = 12f;
     public float attackRange = 3f;
+    private EnemyAI enemyAI;
 
     Transform player;
     Rigidbody2D rb;
@@ -14,7 +15,8 @@ public class PoliceRun : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyAI =animator.GetComponent<EnemyAI>();
+        player = enemyAI.getTargetPlayer().transform;
         rb = animator.GetComponent<Rigidbody2D>();
     }
 

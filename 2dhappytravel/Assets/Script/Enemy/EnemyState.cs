@@ -9,6 +9,7 @@ public class EnemyState : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip dead;
     public GameObject bloodeffect;
+    private EnemyAI enemyAI;
     private GameObject player;
     public PlayerStatHandler playerStatHandler;
     public float damage;
@@ -18,9 +19,12 @@ public class EnemyState : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerStatHandler = player.GetComponent<PlayerStatHandler>();
         audioSource = GetComponent<AudioSource>();
+        enemyAI = GetComponent<EnemyAI>();
     }
     void Update()
     {
+        player = enemyAI.getTargetPlayer();
+        playerStatHandler = player.GetComponent<PlayerStatHandler>();
         if (health <= 0)
         {
             audioSource.PlayOneShot(dead);
