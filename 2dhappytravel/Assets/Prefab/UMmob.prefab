@@ -322,10 +322,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  attackDamage: 1
+  attackOffset: {x: 1, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 64
   dead: {fileID: 8300000, guid: a691b4f0336766a40a4a66f3264c6459, type: 3}
   bloodeffect: {fileID: 386026656360011386, guid: 3ed461874c9403543a09d920a297a833, type: 3}
   playerStatHandler: {fileID: 0}
-  damage: 2
 --- !u!60 &6098107020041814591
 PolygonCollider2D:
   m_ObjectHideFlags: 0
