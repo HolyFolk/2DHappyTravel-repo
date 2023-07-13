@@ -9,14 +9,14 @@ public class EnemyState : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip dead;
     public GameObject bloodeffect;
-    private GameObject player;
+    private GameObject target;
     public PlayerStatHandler playerStatHandler;
     public float damage;
+    private bool inRange;
 
-    void Start()
+    void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerStatHandler = player.GetComponent<PlayerStatHandler>();
+        playerStatHandler = GetComponent<PlayerStatHandler>();
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
@@ -37,13 +37,10 @@ public class EnemyState : MonoBehaviour
         Debug.Log("Damage TAKEN !");
     }
 
-    public void Dead()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-    }
-
-    public void Attack()
-    {
-        playerStatHandler.TakeDamage(damage);
+        if (collision.gameObject.tag == "Player") {
+            playerStatHandler.TakeDamage(damage);
+        }
     }
 }
