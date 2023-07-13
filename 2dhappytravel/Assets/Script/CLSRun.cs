@@ -7,6 +7,7 @@ public class CLSRun : StateMachineBehaviour
     public float speed = 5f;
     public float checkDistance = 16f;
     public float attackRange = 2f;
+    private EnemyAI enemyAI;
 
     Transform player;
     Rigidbody2D rb;
@@ -14,13 +15,14 @@ public class CLSRun : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyAI = animator.GetComponent<EnemyAI>();
         rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        player = enemyAI.getTargetPlayer().transform;
         float distance = Vector2.Distance(player.position, rb.position);
         if (distance <= attackRange)
         {

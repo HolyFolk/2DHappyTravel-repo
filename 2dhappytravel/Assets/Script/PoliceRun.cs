@@ -16,13 +16,13 @@ public class PoliceRun : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemyAI =animator.GetComponent<EnemyAI>();
-        player = enemyAI.getTargetPlayer().transform;
         rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        player = enemyAI.getTargetPlayer().transform;
         float distance = Vector2.Distance(player.position, rb.position);
         if (distance <= attackRange)
         {

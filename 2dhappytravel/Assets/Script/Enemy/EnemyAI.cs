@@ -39,8 +39,8 @@ public class EnemyAI : MonoBehaviour
     {
         for (int i = 0; i < players.Length; i++)
         {
-            float targetDistance = Vector2.Distance(rb.position, players[i].transform.position);
-            if (targetDistance < Vector2.Distance(rb.position, target.position))
+            float altTargetDistance = Vector2.Distance(rb.position, players[i].transform.position);
+            if (altTargetDistance < Vector2.Distance(rb.position, target.position))
             {
                 target = players[i].transform;
                 targetPlayer = players[i];

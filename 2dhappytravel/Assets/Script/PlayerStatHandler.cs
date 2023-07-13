@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 
 public class PlayerStatHandler : MonoBehaviour
@@ -70,9 +71,10 @@ public class PlayerStatHandler : MonoBehaviour
             lifeCount--;
             playerStat.LifeCount=lifeCount;
         } else if(hp <= 0 && lifeCount == 0){
-            Dead();
             playerStat.IsNull = true;
             gameOver = true;
+            Dead();
+            player.transform.position = new Vector2(-200, -999);
         }
     }
 
