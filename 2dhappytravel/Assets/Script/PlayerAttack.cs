@@ -85,9 +85,13 @@ public class PlayerAttack : MonoBehaviour
     { 
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
-            if (enemiesToDamage[i] != null)
+            if (enemiesToDamage[i].CompareTag("Mob"))
             {
                 enemiesToDamage[i].GetComponent<EnemyState>().TakeDamage(damage);
+            }
+            else if(enemiesToDamage[i].CompareTag("WTS"))
+            {
+                enemiesToDamage[i].GetComponent<WTSHealth>().TakeDamage(damage);
             }
         }
     }

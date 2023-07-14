@@ -7,6 +7,7 @@ public class WTSMove : StateMachineBehaviour
     public float speed = 4f;
     public float checkDistance = 10f;
     public float attackRange = 5f;
+    private EnemyAI enemyAI;
 
     Transform player;
     Rigidbody2D rb;
@@ -14,7 +15,8 @@ public class WTSMove : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyAI = animator.GetComponent<EnemyAI>();
         rb = animator.GetComponent<Rigidbody2D>();
         wtsHealth = animator.GetComponent<WTSHealth>();
     }
@@ -22,17 +24,18 @@ public class WTSMove : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        wtsHealth.LookAtPlayer();
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        //wtsHealth.LookAtPlayer();
+        //Vector2 target = new Vector2(player.position.x, rb.position.y);
+        //Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        player = enemyAI.getTargetPlayer().transform;
         float distance = Vector2.Distance(player.position, rb.position);
         Debug.Log(distance);
-        if (distance < checkDistance && distance > attackRange)
+       /* if (distance < checkDistance && distance > attackRange)
         {
             rb.MovePosition(newPos);
             Debug.Log(distance);
         }
-        else if (distance <= attackRange)
+        else*/ if (distance <= attackRange)
         {
             animator.SetTrigger("WTSAT");
         }

@@ -10,12 +10,14 @@ public class WTSHealth : MonoBehaviour
     public float maxHit = 60;
     private Transform player;
 
-    public bool isFlipped = false;
+    //public bool isFlipped = false;
     public float attackDamage = 2.5f;
     public Vector3 attackOffset;
     public float attackRange = 2f;
     public LayerMask attackMask;
     public Slider slider;
+    public GameObject wts;
+    public Text GGtext;
 
     private void Start()
     {
@@ -26,7 +28,7 @@ public class WTSHealth : MonoBehaviour
         player = playLoc.GetComponent<Transform>();
 
     }
-    public void LookAtPlayer()
+    /*public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
@@ -43,6 +45,13 @@ public class WTSHealth : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }*/
+    private void Update()
+    {
+        if (hitpoint <= 0)
+        {
+            Die();
+        }
     }
     public void Attack()
     {
@@ -57,20 +66,17 @@ public class WTSHealth : MonoBehaviour
         }
     }
 
-    public void TakeHit(float damage)
+    public void TakeDamage(float damage)
     {
         hitpoint -= damage;
         SetHealth(hitpoint);
-        if (hitpoint <= 0)
-        {
-            //Dead Effect
-            Invoke("Die", 3f);
-        }
     }
 
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(wts);
+        Time.timeScale = 0.1f;
+        GGtext.gameObject.SetActive(true);
     }
 
     public void SetMaxHealth(float health)

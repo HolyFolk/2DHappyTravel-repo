@@ -25,6 +25,7 @@ public class Portal : MonoBehaviour
         }
     }
 
+
     void Teleport(Vector3 tpPos)
     {
         for(int i = 0; i < players.Length; i++){

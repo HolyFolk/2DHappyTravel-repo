@@ -16,9 +16,13 @@ public class Projectiles : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         var enemy = collision.collider.GetComponent<EnemyState>();
+        var boss = collision.collider.GetComponent<WTSHealth>();
         if (enemy)
         {
             enemy.TakeDamage(1.2f);
+        }else if(boss)
+        { 
+            boss.TakeDamage(1.2f);       
         }
         Destroy(gameObject);
     }
