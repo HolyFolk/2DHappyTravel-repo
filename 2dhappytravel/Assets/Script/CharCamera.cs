@@ -21,10 +21,10 @@ public class CharCamera : MonoBehaviour
     public float mapY = 100.0f;
 
     // just private var for the map boundaries
-    private float minX = 0f;
-    private float maxX = 0f;
-    private float minY = 0f;
-    private float maxY = 0f;
+    public float minX = 0f;
+    public float maxX = 0f;
+    public float minY = 0f;
+    public float maxY = 0f;
 
     void Start()
     {
@@ -45,12 +45,12 @@ public class CharCamera : MonoBehaviour
 
         
         // check if it's inside the boundaries on the X position
-        wantedPosition.x = (wantedPosition.x < minX) ? minX : wantedPosition.x;
+        /*wantedPosition.x = (wantedPosition.x < minX) ? minX : wantedPosition.x;
         wantedPosition.x = (wantedPosition.x > maxX) ? maxX : wantedPosition.x;
 
         // check if it's inside the boundaries on the Y position
         wantedPosition.y = (wantedPosition.y < minY) ? minY : wantedPosition.y;
-        wantedPosition.y = (wantedPosition.y > maxY) ? maxY : wantedPosition.y;
+        wantedPosition.y = (wantedPosition.y > maxY) ? maxY : wantedPosition.y;*/
 
         // set the camera to go to the wanted position in a certain amount of time
         transform.position = Vector3.Lerp(transform.position, wantedPosition, (Time.deltaTime * damping));

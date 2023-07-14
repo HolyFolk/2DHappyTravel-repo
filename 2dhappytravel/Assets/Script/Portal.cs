@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    private GameObject player;
-    public float x;
-    public float y;
-    public float z;
+    private GameObject[] players;
+    public GameObject teleportTarget;
+    private Vector3 teleportPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        players = GameObject.FindGameObjectsWithTag("Player");
+       teleportPos= teleportTarget.transform.position;
     }
 
      void OnCollisionEnter2D(Collision2D collision)
@@ -21,12 +21,14 @@ public class Portal : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("Going S2");
-            Teleport(x, y, z);
+            Teleport(teleportPos);
         }
     }
 
-    void Teleport(float x, float y, float z)
+    void Teleport(Vector3 tpPos)
     {
-        player.transform.position = new Vector3(x, y, z);
+        for(int i = 0; i < players.Length; i++){
+            players[i].transform.position = tpPos;  
+        }
     }
 }
